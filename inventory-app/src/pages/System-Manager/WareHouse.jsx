@@ -1,10 +1,39 @@
-import React, { useState ,useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import Header from "../../components/Header"
+import AddWareHouse from '../Modals/AddWareHouse'
+import WareHouseDetaile from "../Modals/WareHouseDetails" 
+import WareHouseEdit from "../Modals/WareHouseEdit" 
 
 const WareHouse = () => {
     const [percentage, setPercentage] = useState(0)
     const [storage, setStorage] = useState(2000)
     const [filterBy, setFilterBy] = React.useState("جدید ترین")
+
+
+    
+    // استیت مودال ها
+    const [addWareHouse, setAddWareHouse] = useState(false)
+    const [seeDtails,setSeeDtails] = useState(false)
+    const [Edit,setEdit] = useState(false)
+
+    //باز و بسته کردن مودال ها
+    const openAddWareHouse = () => setAddWareHouse(true);
+    const closeAddWareHouse = () => setAddWareHouse(false);
+    const openSeeDatail = () => setSeeDtails(true);
+    const closeDatails = () => setSeeDtails(false);
+    const openEdit = () => setEdit(true);
+    const closeEdit = () => setEdit(false);
+
+
+    //فانکشن های مودال ها
+    const fetchAddingWareHouse = () => {
+        console.log("dalam");
+        
+    }
+    const EditWareHouse = () => {
+        console.log("dalam");
+        
+    }
 
 
     useEffect(() => {
@@ -18,7 +47,7 @@ const WareHouse = () => {
 
         return () => clearInterval(timer);
     }, []);
-
+    
     return (
         <>
             <Header icon="fa-solid fa-warehouse" title=" انبار ها" />
@@ -64,7 +93,7 @@ const WareHouse = () => {
                         <input type="text" placeholder='جستجو....' />
                         <i className="fa-solid fa-magnifying-glass"></i>
                     </div>
-                    <button className='dropbtn'>افزودن انبار</button>
+                    <button onClick={openAddWareHouse} className='dropbtn'>افزودن انبار</button>
                 </div>
                 <div className='table-container'>
                     <table>
@@ -84,8 +113,8 @@ const WareHouse = () => {
                                 <td>محمد بهروز</td>
                                 <td>وضعیت انبار</td>
                                 <td>
-                                    <button className='little-icon-button'><i className="fa-solid fa-eye"></i></button>
-                                    <button className='little-icon-button'><i className="fa-solid fa-pen"></i></button>
+                                    <button onClick={openSeeDatail} className='little-icon-button'><i className="fa-solid fa-eye"></i></button>
+                                    <button onClick={openEdit} className='little-icon-button'><i className="fa-solid fa-pen"></i></button>
                                     <button className='little-icon-button'><i className="fa-solid fa-trash"></i></button>
                                 </td>
                             </tr>
@@ -101,9 +130,9 @@ const WareHouse = () => {
                 <div style={{ width: "100%", margin: "10px" }}>
 
                     <span>فیتلر بر اساس :</span>
-                    <div class="dropdown">
-                        <button class="dropbtn" >{filterBy} <i className="fa-solid fa-chevron-down"></i></button>
-                        <div class="dropdown-content" style={{ marginRight: "10px" }}>
+                    <div className="dropdown">
+                        <button className="dropbtn" >{filterBy} <i className="fa-solid fa-chevron-down"></i></button>
+                        <div className="dropdown-content" style={{ marginRight: "10px" }}>
                             <button onClick={() => setFilterBy("جدید ترین")} >جدید ترین</button>
                             <button onClick={() => setFilterBy("گران ترین")}>گران ترین</button>
                             <button onClick={() => setFilterBy("وضعیت پرداخت")}>وضعیت پرداخت</button>
@@ -133,7 +162,11 @@ const WareHouse = () => {
                     </table>
 
                 </div>
+
             </div>
+            <AddWareHouse isOpen={addWareHouse} onClose={closeAddWareHouse} fetch={fetchAddingWareHouse} />
+            <WareHouseDetaile isOpen={seeDtails} onClose={closeDatails}  />
+            <WareHouseEdit isOpen={Edit} onClose={closeEdit}  fetch={EditWareHouse}/>
         </>
     )
 }

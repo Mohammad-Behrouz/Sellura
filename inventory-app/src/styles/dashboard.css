@@ -274,14 +274,17 @@ h6 {
     align-items: center;
     transition: all 0.2s linear;
 }
-.category i{
+
+.category i {
     font-size: 32px;
 }
-.category:hover{
+
+.category:hover {
     background-color: #5A1899;
     color: white;
 }
-#account-div{
+
+#account-div {
     width: 90%;
     height: 500px;
     margin: 20px;
@@ -293,12 +296,28 @@ h6 {
     gap: 50px;
     border-radius: 20px;
 }
-#account-div-2{
+
+#account-div-2 {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
-#account-div-2 div{
+#account-div-2 div {
     margin-right: 10px;
+}
+
+.modal-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+#flex-modal-btn {
+    display: flex;
+    gap: 5px;
+
 }

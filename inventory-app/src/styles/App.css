@@ -25,10 +25,24 @@
   width: 200px;
   transition: all 0.2s linear;
 }
+.redbtn{
+  background-color:#D76C82 ;
+}
+.redbtn:hover{
+  background-color:#D76C82 !important;
+  color: white !important;
+}
+.greenbtn{
+  background-color:#1F7D53 ;
+}
+.greenbtn:hover{
+  color: white !important;
+  background-color:#1F7D53 !important;
+}
 .dropbtn:hover{
   background-color: #fff;
-  color: #1E0834;
-  border: 1px solid #1E0834;
+  color: #5A1899;
+  border: 1px solid #5A1899;
 }
 
 
@@ -179,4 +193,34 @@
 .little-icon-button:hover{
   background-color: #5A1899;
   color: white;
+}
+/* App.css */
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.ReactModal__Content {
+  transform: translateY(50px);
+  transition: transform 300ms ease-in-out;
+  opacity: 0;
+}
+
+.ReactModal__Content--after-open {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.ReactModal__Content--before-close {
+  transform: translateY(50px);
+  opacity: 0;
 }

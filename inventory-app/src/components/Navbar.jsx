@@ -19,7 +19,7 @@ function Navbar() {
             </div>
             <div id='nav-list'>
                 <Link to="/Dashboard"><i className="fa-solid fa-coins"></i>مالی  </Link>
-                <Link to="/WareHouse" compo><i className="fa-solid fa-warehouse"></i>انبار </Link>
+                <Link to="/WareHouse"><i className="fa-solid fa-warehouse"></i>انبار </Link>
                 <Link to="/Shops"><i className="fa-solid fa-shop"></i>فروشگاه ها </Link>
                 <Link to="/Vehicles"><i className="fa-solid fa-car"></i>خودرو ها </Link>
                 <Link to="/Employee"><i className="fa-solid fa-user-tie"></i>کارمند ها </Link>
