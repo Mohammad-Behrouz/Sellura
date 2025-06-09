@@ -1,0 +1,16 @@
+P:\ASP .net\Sellura\Sellura.Core\bin\Debug\net9.0\Sellura.Core.deps.json
+P:\ASP .net\Sellura\Sellura.Core\bin\Debug\net9.0\Sellura.Core.dll
+P:\ASP .net\Sellura\Sellura.Core\bin\Debug\net9.0\Sellura.Core.pdb
+P:\ASP .net\Sellura\Sellura.Core\bin\Debug\net9.0\Sellura.Datalayer.dll
+P:\ASP .net\Sellura\Sellura.Core\bin\Debug\net9.0\Sellura.Datalayer.pdb
+P:\ASP .net\Sellura\Sellura.Core\obj\Debug\net9.0\Sellura.Core.csproj.AssemblyReference.cache
+P:\ASP .net\Sellura\Sellura.Core\obj\Debug\net9.0\Sellura.Core.GeneratedMSBuildEditorConfig.editorconfig
+P:\ASP .net\Sellura\Sellura.Core\obj\Debug\net9.0\Sellura.Core.AssemblyInfoInputs.cache
+P:\ASP .net\Sellura\Sellura.Core\obj\Debug\net9.0\Sellura.Core.AssemblyInfo.cs
+P:\ASP .net\Sellura\Sellura.Core\obj\Debug\net9.0\Sellura.Core.csproj.CoreCompileInputs.cache
+P:\ASP .net\Sellura\Sellura.Core\obj\Debug\net9.0\Sellura.Core.sourcelink.json
+P:\ASP .net\Sellura\Sellura.Core\obj\Debug\net9.0\Sellura..6BEAA1ED.Up2Date
+P:\ASP .net\Sellura\Sellura.Core\obj\Debug\net9.0\Sellura.Core.dll
+P:\ASP .net\Sellura\Sellura.Core\obj\Debug\net9.0\refint\Sellura.Core.dll
+P:\ASP .net\Sellura\Sellura.Core\obj\Debug\net9.0\Sellura.Core.pdb
+P:\ASP .net\Sellura\Sellura.Core\obj\Debug\net9.0\ref\Sellura.Core.dll

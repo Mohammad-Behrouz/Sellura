@@ -1,0 +1,10 @@
+{
+"SpaProxyServer": {
+"ServerUrl": "https://localhost:54273",
+"RedirectUrl": "",
+"LaunchCommand": "npm run dev",
+"WorkingDirectory": "P:\\Sellura\\Sellura.Server\\..\\sellura.client",
+"MaxTimeoutInSeconds": "120",
+"KeepRunning": "false"
+}
+}
