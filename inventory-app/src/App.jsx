@@ -1,5 +1,6 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
+
 import Login from './pages/Login';
 import Dashboard from './pages/System-Manager/Dashboard';
 import ManagerPanel from './pages/System-Manager/ManagerPanel';
@@ -15,17 +16,20 @@ import ForgetPass from './pages/ForgetPass';
 import ForgetUn from './pages/ForgetUn';
 import Customers from './pages/System-Manager/Customers';
 import Employees from './pages/System-Manager/Employees';
+import InvoiceDetail from "./pages/InvoiceDetail";
 
 function App() {
-  const location = useLocation(); // برای گرفتن مسیر فعلی
+  const location = useLocation();
 
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
+        {/* صفحات بیرون از layout */}
         <Route path="/" element={<Login />} />
         <Route path="/login/forgetPass" element={<ForgetPass />} />
         <Route path="/login/forgetUn" element={<ForgetUn />} />
 
+        {/* صفحات داخل layout */}
         <Route element={<MainLayout />}>
           <Route
             path="/Dashboard"
@@ -41,6 +45,10 @@ function App() {
               </motion.div>
             }
           />
+
+          <Route path="/ManagerPanel" element={<ManagerPanel />} />
+          <Route path="/CashierPanel" element={<CashierPanel />} />
+
           <Route
             path="/WareHouse"
             element={
@@ -55,6 +63,7 @@ function App() {
               </motion.div>
             }
           />
+
           <Route
             path="/Shops"
             element={
@@ -69,6 +78,7 @@ function App() {
               </motion.div>
             }
           />
+
           <Route
             path="/Vehicles"
             element={
@@ -83,6 +93,7 @@ function App() {
               </motion.div>
             }
           />
+
           <Route
             path="/Products"
             element={
@@ -97,6 +108,7 @@ function App() {
               </motion.div>
             }
           />
+
           <Route
             path="/Account"
             element={
@@ -111,6 +123,7 @@ function App() {
               </motion.div>
             }
           />
+
           <Route
             path="/Customers"
             element={
@@ -125,6 +138,7 @@ function App() {
               </motion.div>
             }
           />
+
           <Route
             path="/Employee"
             element={
@@ -139,8 +153,22 @@ function App() {
               </motion.div>
             }
           />
+
+          <Route
+            path="/invoice"
+            element={
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 100 }}
+                transition={{ duration: 0.3 }}
+                style={{ minHeight: '100%' }}
+              >
+                <InvoiceDetail />
+              </motion.div>
+            }
+          />
         </Route>
-        
       </Routes>
     </AnimatePresence>
   );
