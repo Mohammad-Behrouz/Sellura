@@ -1,0 +1,233 @@
+.bgc-linear{
+    background:linear-gradient(180deg ,#5A189A  , #1E0834);
+
+}
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  direction: rtl;
+  flex-direction: row-reverse;
+  width: 65%;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #5A1899;
+  color: white;
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  border-radius: 6px;
+  width: 200px;
+  transition: all 0.2s linear;
+}
+.redbtn{
+  background-color:#D76C82 ;
+}
+
+.redbtn:hover{
+  background-color:#D76C82 !important;
+  color: white !important;
+  border: none !important;
+}
+
+
+.greenbtn{
+  background-color:#1F7D53 ;
+}
+.greenbtn:hover{
+  color: white !important;
+  background-color:#1F7D53 !important;
+  border: none !;
+}
+.dropbtn:hover{
+  background-color: #fff;
+  color: #5A1899;
+  border: 1px solid #5A1899;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  z-index: 1;
+  border-radius: 6px;
+}
+
+.dropdown-content button {
+  color: black;
+  padding: 10px 12px;
+  text-decoration: none;
+  display: block;
+  border: none;
+  background-color: #fff;
+  width: 100%;
+  transition: all 0.2s linear;
+}
+
+.dropdown-content button:hover {
+  background-color: #f1f1f1;
+}
+
+/* وقتی ماوس روی دکمه رفت، منو نمایش داده می‌شه */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.tab-button{
+  background-color: #D9C7F2;
+  border-radius: 20px;
+  color :#5A1899;
+  padding: 10px 15px;
+  margin: 10px;
+  border: none;transition: all 0.5s linear;
+}
+.active-button-tap{
+  color: white;
+  background-color: #5A1899;
+}
+.content-container{
+  width: 80%;
+  direction : rtl ;
+  padding: 20px 40px 0 0;
+  overflow-y:scroll;
+  overflow-x: hidden;
+  
+}
+
+.input-wrapper i {
+  position: absolute;
+  right: 10px;
+  color: #5A1899;
+}
+
+.input-wrapper input {
+  padding: 10px 40px  10px 10px;
+
+  width: 90%; 
+  /* margin: 10px; */
+  border: none;
+  border-radius: 10px;
+  background-color: #D9C7F2;
+  color: #5A189A !important;
+}
+.input-wrapper input::placeholder {
+  color: #5A1899;
+}
+.input-wrapper input:focus {
+  border: none;
+  outline: none;
+  
+}
+.dashboard-container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.navbar{
+  width: 20%;
+  height: 100%;
+     background:linear-gradient(180deg ,#5A189A  , #1E0834);
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+#top-header-nav{
+  display: flex;
+  width: 86%;
+  padding: 20px;
+  height: 20px;
+  justify-content: space-between;
+}
+#nav-profile{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white !important;
+  
+}
+#nav-profile img{
+  width: 50%;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 20px white;
+  margin: 20px;
+}
+#nav-profile span{
+  font-size: 12px;
+}
+#nav-list{
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column; 
+  direction: rtl;
+  gap: 15px;
+  font-size: 18px;
+  padding-right:35px ;
+}
+#nav-list a {
+  display: flex;
+  gap: 20px;
+  color: white;
+  text-decoration: none;
+}
+.header-of-dash{
+  color: #5A1899;
+  direction: rtl;
+  /* padding: 20px 45px; */
+}
+.little-icon-button{
+  background-color: #fff;
+  border:1px solid #5A1899;
+  color: #5A1899;
+  border-radius: 10px;
+  margin: 2px;
+  padding: 7px 8px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.4s linear;
+}
+.little-icon-button:hover{
+  background-color: #5A1899;
+  color: white;
+}
+/* App.css */
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.ReactModal__Content {
+  transform: translateY(50px);
+  transition: transform 300ms ease-in-out;
+  opacity: 0;
+}
+
+.ReactModal__Content--after-open {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.ReactModal__Content--before-close {
+  transform: translateY(50px);
+  opacity: 0;
+}

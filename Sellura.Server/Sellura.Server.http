@@ -1,4 +1,4 @@
-@Sellura.Server_HostAddress = http://localhost:5062
+@Sellura.Server_HostAddress = http://localhost:54273
 
 GET {{Sellura.Server_HostAddress}}/weatherforecast/
 Accept: application/json

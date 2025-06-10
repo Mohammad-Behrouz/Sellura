@@ -14,3 +14,19 @@ P:\ASP .net\Sellura\Sellura.Core\obj\Debug\net9.0\Sellura.Core.dll
 P:\ASP .net\Sellura\Sellura.Core\obj\Debug\net9.0\refint\Sellura.Core.dll
 P:\ASP .net\Sellura\Sellura.Core\obj\Debug\net9.0\Sellura.Core.pdb
 P:\ASP .net\Sellura\Sellura.Core\obj\Debug\net9.0\ref\Sellura.Core.dll
+P:\Sellura\Sellura.Core\bin\Debug\net9.0\Sellura.Core.deps.json
+P:\Sellura\Sellura.Core\bin\Debug\net9.0\Sellura.Core.dll
+P:\Sellura\Sellura.Core\bin\Debug\net9.0\Sellura.Core.pdb
+P:\Sellura\Sellura.Core\bin\Debug\net9.0\Sellura.Datalayer.dll
+P:\Sellura\Sellura.Core\bin\Debug\net9.0\Sellura.Datalayer.pdb
+P:\Sellura\Sellura.Core\obj\Debug\net9.0\Sellura.Core.csproj.AssemblyReference.cache
+P:\Sellura\Sellura.Core\obj\Debug\net9.0\Sellura.Core.GeneratedMSBuildEditorConfig.editorconfig
+P:\Sellura\Sellura.Core\obj\Debug\net9.0\Sellura.Core.AssemblyInfoInputs.cache
+P:\Sellura\Sellura.Core\obj\Debug\net9.0\Sellura.Core.AssemblyInfo.cs
+P:\Sellura\Sellura.Core\obj\Debug\net9.0\Sellura.Core.csproj.CoreCompileInputs.cache
+P:\Sellura\Sellura.Core\obj\Debug\net9.0\Sellura.Core.sourcelink.json
+P:\Sellura\Sellura.Core\obj\Debug\net9.0\Sellura..6BEAA1ED.Up2Date
+P:\Sellura\Sellura.Core\obj\Debug\net9.0\Sellura.Core.dll
+P:\Sellura\Sellura.Core\obj\Debug\net9.0\refint\Sellura.Core.dll
+P:\Sellura\Sellura.Core\obj\Debug\net9.0\Sellura.Core.pdb
+P:\Sellura\Sellura.Core\obj\Debug\net9.0\ref\Sellura.Core.dll

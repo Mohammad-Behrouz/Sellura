@@ -1,0 +1,15 @@
+P:\Sellura\Sellura.Datalayer\bin\Debug\net8.0\Sellura.Datalayer.deps.json
+P:\Sellura\Sellura.Datalayer\bin\Debug\net8.0\Sellura.Datalayer.runtimeconfig.json
+P:\Sellura\Sellura.Datalayer\bin\Debug\net8.0\Sellura.Datalayer.dll
+P:\Sellura\Sellura.Datalayer\bin\Debug\net8.0\Sellura.Datalayer.pdb
+P:\Sellura\Sellura.Datalayer\obj\Debug\net8.0\Sellura.Datalayer.csproj.AssemblyReference.cache
+P:\Sellura\Sellura.Datalayer\obj\Debug\net8.0\Sellura.Datalayer.GeneratedMSBuildEditorConfig.editorconfig
+P:\Sellura\Sellura.Datalayer\obj\Debug\net8.0\Sellura.Datalayer.AssemblyInfoInputs.cache
+P:\Sellura\Sellura.Datalayer\obj\Debug\net8.0\Sellura.Datalayer.AssemblyInfo.cs
+P:\Sellura\Sellura.Datalayer\obj\Debug\net8.0\Sellura.Datalayer.csproj.CoreCompileInputs.cache
+P:\Sellura\Sellura.Datalayer\obj\Debug\net8.0\Sellura.Datalayer.sourcelink.json
+P:\Sellura\Sellura.Datalayer\obj\Debug\net8.0\Sellura.Datalayer.dll
+P:\Sellura\Sellura.Datalayer\obj\Debug\net8.0\refint\Sellura.Datalayer.dll
+P:\Sellura\Sellura.Datalayer\obj\Debug\net8.0\Sellura.Datalayer.pdb
+P:\Sellura\Sellura.Datalayer\obj\Debug\net8.0\Sellura.Datalayer.genruntimeconfig.cache
+P:\Sellura\Sellura.Datalayer\obj\Debug\net8.0\ref\Sellura.Datalayer.dll

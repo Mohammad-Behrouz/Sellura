@@ -6,8 +6,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+//swagger
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 
 #region Add Services
 
@@ -47,7 +49,6 @@ else
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles();
 app.UseAuthentication();
 app.UseRouting();
 app.UseAuthorization();
@@ -63,8 +64,14 @@ app.UseEndpoints(endpoints =>
         name: "default",
         pattern: "{controller=Home}/{action=Index}/{id?}"
     );
+
 });
+app.MapFallbackToFile("/index.html");
 
 #endregion
+
+app.UseSwagger();
+app.UseSwaggerUI();
+
 
 app.Run();

@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "CVqU7V/wmblyw43KA4QTcR8SzD1XqL0fnhID4NQ2ltc=",
+  "Hash": "/pygo6XQvh1y3S0/1Cim6v2+VkNqJXdAfzOQaThbLa4=",
   "Source": "Sellura.Server",
   "BasePath": "_content/Sellura.Server",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "P:\\ASP .net\\Sellura\\sellura.client\\sellura.client.esproj",
+      "Identity": "P:\\Sellura\\sellura.client\\sellura.client.esproj",
       "Version": 2,
       "Source": "sellura.client",
       "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",

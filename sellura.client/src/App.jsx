@@ -1,51 +1,150 @@
-import { useEffect, useState } from 'react';
-import './App.css';
+/* eslint-disable no-unused-vars */
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
+import Login from './pages/Login';
+import Dashboard from './pages/System-Manager/Dashboard';
+import ManagerPanel from './pages/System-Manager/ManagerPanel';
+import CashierPanel from './pages/System-Manager/CashierPanel';
+import WareHouse from './pages/System-Manager/WareHouse';
+import Shops from './pages/System-Manager/Shops';
+import Vehicles from './pages/System-Manager/Vehicles';
+import MainLayout from './components/MainLayout';
+import './styles/App.css';
+import Products from './pages/System-Manager/Products';
+import Account from './pages/System-Manager/Account';
+import ForgetPass from './pages/ForgetPass';
+import ForgetUn from './pages/ForgetUn';
+import Customers from './pages/System-Manager/Customers';
+import Employees from './pages/System-Manager/Employees';
 
 function App() {
-    const [forecasts, setForecasts] = useState();
+  const location = useLocation(); // برای گرفتن مسیر فعلی
 
-    useEffect(() => {
-        populateWeatherData();
-    }, []);
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Login />} />
+        <Route path="/login/forgetPass" element={<ForgetPass />} />
+        <Route path="/login/forgetUn" element={<ForgetUn />} />
 
-    const contents = forecasts === undefined
-        ? <p><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationreact">https://aka.ms/jspsintegrationreact</a> for more details.</em></p>
-        : <table className="table table-striped" aria-labelledby="tableLabel">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Temp. (C)</th>
-                    <th>Temp. (F)</th>
-                    <th>Summary</th>
-                </tr>
-            </thead>
-            <tbody>
-                {forecasts.map(forecast =>
-                    <tr key={forecast.date}>
-                        <td>{forecast.date}</td>
-                        <td>{forecast.temperatureC}</td>
-                        <td>{forecast.temperatureF}</td>
-                        <td>{forecast.summary}</td>
-                    </tr>
-                )}
-            </tbody>
-        </table>;
-
-    return (
-        <div>
-            <h1 id="tableLabel">Weather forecast</h1>
-            <p>This component demonstrates fetching data from the server.</p>
-            {contents}
-        </div>
-    );
-    
-    async function populateWeatherData() {
-        const response = await fetch('weatherforecast');
-        if (response.ok) {
-            const data = await response.json();
-            setForecasts(data);
-        }
-    }
+        <Route element={<MainLayout />}>
+          <Route
+            path="/Dashboard"
+            element={
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 100 }}
+                transition={{ duration: 0.3 }}
+                style={{ minHeight: '100%' }}
+              >
+                <Dashboard />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/WareHouse"
+            element={
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 100 }}
+                transition={{ duration: 0.3 }}
+                style={{ minHeight: '100%' }}
+              >
+                <WareHouse />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/Shops"
+            element={
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 100 }}
+                transition={{ duration: 0.3 }}
+                style={{ minHeight: '100%' }}
+              >
+                <Shops />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/Vehicles"
+            element={
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 100 }}
+                transition={{ duration: 0.3 }}
+                style={{ minHeight: '100%' }}
+              >
+                <Vehicles />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/Products"
+            element={
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 100 }}
+                transition={{ duration: 0.3 }}
+                style={{ minHeight: '100%' }}
+              >
+                <Products />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/Account"
+            element={
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 100 }}
+                transition={{ duration: 0.3 }}
+                style={{ minHeight: '100%' }}
+              >
+                <Account />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/Customers"
+            element={
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 100 }}
+                transition={{ duration: 0.3 }}
+                style={{ minHeight: '100%' }}
+              >
+                <Customers />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/Employee"
+            element={
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 100 }}
+                transition={{ duration: 0.3 }}
+                style={{ minHeight: '100%' }}
+              >
+                <Employees />
+              </motion.div>
+            }
+          />
+        </Route>
+        
+      </Routes>
+    </AnimatePresence>
+  );
 }
 
 export default App;
