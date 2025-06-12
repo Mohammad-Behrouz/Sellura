@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Sellura.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+02edadc3f58679a4e4be1cd23c8cb401e00629ab")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b67e5b98cfa8156e8a122cd0d5258af3d1732425")]
 [assembly: System.Reflection.AssemblyProductAttribute("Sellura.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Sellura.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

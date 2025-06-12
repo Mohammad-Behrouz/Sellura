@@ -1,2 +1,0 @@
-P:\ASP .net\Sellura\sellura.client\obj\Debug\sellura.client.esproj.CoreCompileInputs.cache
-P:\Sellura\sellura.client\obj\Debug\sellura.client.esproj.CoreCompileInputs.cache

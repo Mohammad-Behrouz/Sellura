@@ -2815,23 +2815,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Matin\\.nuget\\packages\\": {},
+    "C:\\Users\\Hp\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "P:\\Sellura\\Sellura.Core\\Sellura.Core.csproj",
+      "projectUniqueName": "D:\\Programming\\Sellura\\Sellura.Core\\Sellura.Core.csproj",
       "projectName": "Sellura.Core",
-      "projectPath": "P:\\Sellura\\Sellura.Core\\Sellura.Core.csproj",
-      "packagesPath": "C:\\Users\\Matin\\.nuget\\packages\\",
-      "outputPath": "P:\\Sellura\\Sellura.Core\\obj\\",
+      "projectPath": "D:\\Programming\\Sellura\\Sellura.Core\\Sellura.Core.csproj",
+      "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
+      "outputPath": "D:\\Programming\\Sellura\\Sellura.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Matin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2847,8 +2847,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "P:\\Sellura\\Sellura.Datalayer\\Sellura.Datalayer.csproj": {
-              "projectPath": "P:\\Sellura\\Sellura.Datalayer\\Sellura.Datalayer.csproj"
+            "D:\\Programming\\Sellura\\Sellura.Datalayer\\Sellura.Datalayer.csproj": {
+              "projectPath": "D:\\Programming\\Sellura\\Sellura.Datalayer\\Sellura.Datalayer.csproj"
             }
           }
         }
@@ -2862,8 +2862,7 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.200"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -2879,26 +2878,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.16, 8.0.16]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[8.0.16, 8.0.16]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[8.0.16, 8.0.16]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.405/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

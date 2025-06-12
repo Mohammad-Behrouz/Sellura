@@ -6,12 +6,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
+  <!--<ItemGroup>
     <Folder Include="Convertors\" />
     <Folder Include="Senders\" />
     <Folder Include="Security\" />
     <Folder Include="Services\Interfaces\" />
-  </ItemGroup>
+  </ItemGroup>-->
 
   <ItemGroup>
     <ProjectReference Include="..\Sellura.Datalayer\Sellura.Datalayer.csproj" />

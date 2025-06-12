@@ -226,14 +226,15 @@ h6 {
     width: 90%;
     height: 400px;
     display: flex;
-    align-items: center;
+    align-items: start;
+    padding : 10px;
     justify-content: center;
     background-color: #fff;
 }
 
 .table-container table {
     width: 95%;
-    height: 95%;
+    height: auto;
     text-align: center;
 }
 

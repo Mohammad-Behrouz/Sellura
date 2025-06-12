@@ -1,39 +1,195 @@
 import React, { useState, useEffect } from 'react'
 import Header from "../../components/Header"
-import AddWareHouse from '../Modals/AddWareHouse'
-import WareHouseDetaile from "../Modals/WareHouseDetails" 
-import WareHouseEdit from "../Modals/WareHouseEdit" 
+import AddWareHouse from '../Modals/WareHouse/AddWareHouse'
+import WareHouseDetaile from "../Modals/WareHouse/WareHouseDetails"
+import DeleteWareHouse from "../Modals/WareHouse/DeleteWareHouse"
+import WareHouseEdit from "../Modals/WareHouse/WareHouseEdit"
+import alertify from 'alertifyjs'
+
 
 const WareHouse = () => {
     const [percentage, setPercentage] = useState(0)
     const [storage, setStorage] = useState(2000)
     const [filterBy, setFilterBy] = React.useState("جدید ترین")
+    const [warehouse, setWareHouse] = useState([])
+    const [deleteP, setDeleteP] = useState(false);
+
+    const [detailP, setDetailP] = useState(0);
+    const [deletingP, setDeletingP] = useState(0);
 
 
-    
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            const res = await fetch("https://localhost:44348/api/WareHouse");
+            const json = await res.json();
+            setWareHouse(json)
+        }
+        fetchProducts();
+    }, [])
+
+    const deleteProduct = async (id) => {
+        if (id == 0) {
+            console.log("آیدی صفره");
+            return;
+
+        }
+        try {
+            const res = await fetch("https://localhost:44348/api/WareHouse/" + id, {
+                method: "Delete"
+            })
+            if (res.ok) {
+                alertify.success("حذف موفقیت آمیز بود")
+                setWareHouse(prev => prev.filter(p => p.warehouseID !== id));
+                closeDelete()
+            } else {
+                alertify.error("خطای سمت سرور رخ داد")
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+
+    const submitAddWareHouse = async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(e.currentTarget);
+
+        const name = formData.get("name")?.trim();
+        const address = formData.get("address")?.trim();
+        const capacity = formData.get("capacity")?.trim();
+        const City = formData.get("City")?.trim();
+        const Phone = formData.get("Phone")?.trim();
+
+
+
+        if (!name) return alertify.error("لطفا نام انبار را وارد کنید");
+        if (!address) return alertify.error("لطفا آدرس انبار را وارد کنید");
+        if (!capacity) return alertify.error("لطفا ظرفیت انبار را وارد کنید");
+        if (!Phone) return alertify.error("لطفا تلفن انبار را وارد کنید");
+        if (!City) return alertify.error("لطفا شهر انبار را وارد کنید");
+
+        try {
+            const res = await fetch("https://localhost:44348/api/WareHouse", {
+                method: "POST",
+                body: formData,
+            });
+
+            if (!res.ok) {
+                alertify.error("افزودن انبار با مشکل مواجه شد");
+                alertify.error(res);
+                console.log(formData.entries());
+                console.log(Object.fromEntries(formData))
+                closeAddWareHouse();
+            } else {
+                alertify.success("کالا بصورت موفقیت آمیز در سیستم ثبت شد");
+                const newWareHouse = {
+                    name,
+                    address,
+                    capacity,
+                    situation: "فعال",
+                    city: City
+                    , phone: Phone
+                };
+                setWareHouse(prev => [...prev, newWareHouse]);
+                closeAddWareHouse();
+            }
+
+        } catch (error) {
+            console.error(error);
+            alertify.error("خطا در افزودن محصول");
+        }
+    };
+
+    const EditWareHouse = async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(e.currentTarget);
+
+        const name = formData.get("name")?.trim();
+        const address = formData.get("address")?.trim();
+        const capacity = formData.get("capacity")?.trim();
+        const City = formData.get("City")?.trim();
+        const Phone = formData.get("Phone")?.trim();
+        const situation = formData.get("situation")?.trim();
+
+
+        if (!name) return alertify.error("لطفا نام انبار را وارد کنید");
+        if (!address) return alertify.error("لطفا آدرس انبار را وارد کنید");
+        if (!capacity) return alertify.error("لطفا ظرفیت انبار را وارد کنید");
+        if (!Phone) return alertify.error("لطفا تلفن انبار را وارد کنید");
+        if (!City) return alertify.error("لطفا شهر انبار را وارد کنید");
+
+
+
+        try {
+            const res = await fetch("https://localhost:44348/api/WareHouse/" + detailP, {
+                method: "PUT",
+                body: formData,
+            });
+
+            if (!res.ok) {
+                alertify.error("عملیات با خطا مواجه شد");
+            } else {
+                setWareHouse((prev) =>
+                    prev.map((p) =>
+                        p.warehouseID == parseInt(detailP)
+                            ? {
+                                name,
+                                address,
+                                capacity,
+                                situation: situation,
+                                city: City
+                                , phone: Phone
+                            }
+                            : p
+                    )
+                );
+                alertify.success("محصول با موفقیت ویرایش شد");
+                closeEdit();
+            }
+
+        } catch (err) {
+            console.error(err);
+            alertify.error("خطا در ارسال اطلاعات");
+        }
+    };
+
+
     // استیت مودال ها
     const [addWareHouse, setAddWareHouse] = useState(false)
-    const [seeDtails,setSeeDtails] = useState(false)
-    const [Edit,setEdit] = useState(false)
+    const [seeDtails, setSeeDtails] = useState(false)
+    const [Edit, setEdit] = useState(false)
 
     //باز و بسته کردن مودال ها
-    const openAddWareHouse = () => setAddWareHouse(true);
+    const openAddWareHouse = () => {
+        setAddWareHouse(true);
+    }
     const closeAddWareHouse = () => setAddWareHouse(false);
-    const openSeeDatail = () => setSeeDtails(true);
+    const openSeeDatail = (id) => {
+        setDetailP(id);
+        setSeeDtails(true);
+    }
     const closeDatails = () => setSeeDtails(false);
-    const openEdit = () => setEdit(true);
+    const openEdit = (id) => {
+        setDetailP(id);
+        setEdit(true);
+    }
     const closeEdit = () => setEdit(false);
+    const openDelete = (id) => {
+        setDeletingP(id)
+        setDeleteP(true);
+    }
+    const closeDelete = () => setDeleteP(false);
 
 
     //فانکشن های مودال ها
-    const fetchAddingWareHouse = () => {
+    const fetchAddingWareHouse = async () => {
         console.log("dalam");
-        
+
     }
-    const EditWareHouse = () => {
-        console.log("dalam");
-        
-    }
+
 
 
     useEffect(() => {
@@ -47,7 +203,7 @@ const WareHouse = () => {
 
         return () => clearInterval(timer);
     }, []);
-    
+
     return (
         <>
             <Header icon="fa-solid fa-warehouse" title=" انبار ها" />
@@ -88,7 +244,7 @@ const WareHouse = () => {
             </div>
             <div id='ware-list'>
                 <h4 style={{ textAlign: "right", width: "100%" }}><i className="fa-solid fa-newspaper"></i> لیست انبار ها</h4>
-                <div style={{ display: "flex", justifyContent: "space-between", width: "90%", height: "50px", margin: "10px 0" }}>
+                <div style={{ display: "    flex", justifyContent: "space-between", width: "90%", height: "50px", margin: "10px 0" }}>
                     <div className='input-search'>
                         <input type="text" placeholder='جستجو....' />
                         <i className="fa-solid fa-magnifying-glass"></i>
@@ -99,25 +255,32 @@ const WareHouse = () => {
                     <table>
                         <thead>
                             <tr>
-                                <td>کد انبار</td>
                                 <td>نام انبار</td>
-                                <td>مدیر انبار</td>
+                                <td>شهر انبار</td>
+                                <td>شماره تلفن </td>
                                 <td>وضعیت انبار</td>
                                 <td>عملیات</td>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td className='iran-sans-font'>1000235</td>
-                                <td>انبار شماره 1</td>
-                                <td>محمد بهروز</td>
-                                <td>وضعیت انبار</td>
-                                <td>
-                                    <button onClick={openSeeDatail} className='little-icon-button'><i className="fa-solid fa-eye"></i></button>
-                                    <button onClick={openEdit} className='little-icon-button'><i className="fa-solid fa-pen"></i></button>
-                                    <button className='little-icon-button'><i className="fa-solid fa-trash"></i></button>
-                                </td>
-                            </tr>
+                            {warehouse.map((value, index) => {
+                                return (
+                                    <tr key={index} >
+                                        <td className='iran-sans-font'>{value.name}</td>
+                                        <td >{value.city}</td>
+                                        <td className='iran-sans-font'>{value.phone}</td>
+                                        <td className='iran-sans-font'><span style={{
+                                            backgroundColor:
+                                                value.situation == "فعال" ? "#1F7D53" : "#D76C82", color: "white",padding : value.situation == "فعال" ? "2px 30px" : "2px 14px", borderRadius: "5px" 
+                                        }}>{value.situation}</span></td>
+                                        <td>
+                                            <button onClick={() => openSeeDatail(value.warehouseID)} className='little-icon-button'><i className="fa-solid fa-eye"></i></button>
+                                            <button onClick={() => openEdit(value.warehouseID)} className='little-icon-button'><i className="fa-solid fa-pen"></i></button>
+                                            <button className='little-icon-button' onClick={() => openDelete(value.warehouseID)}><i className="fa-solid fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                );
+                            })}
                         </tbody>
                     </table>
 
@@ -164,9 +327,10 @@ const WareHouse = () => {
                 </div>
 
             </div>
-            <AddWareHouse isOpen={addWareHouse} onClose={closeAddWareHouse} fetch={fetchAddingWareHouse} />
-            <WareHouseDetaile isOpen={seeDtails} onClose={closeDatails}  />
-            <WareHouseEdit isOpen={Edit} onClose={closeEdit}  fetch={EditWareHouse}/>
+            <AddWareHouse isOpen={addWareHouse} onClose={closeAddWareHouse} fetch={submitAddWareHouse} />
+            <WareHouseDetaile isOpen={seeDtails} id={detailP} onClose={closeDatails} />
+            <WareHouseEdit isOpen={Edit} onClose={closeEdit} id={detailP} fetchData={EditWareHouse} />
+            <DeleteWareHouse isOpen={deleteP} onClose={closeDelete} id={deletingP} deleteProduct={deleteProduct} />
         </>
     )
 }

@@ -1,24 +1,11 @@
 {
   "Version": 1,
-  "Hash": "a0lPlnAM104AI8KIoVVUIzeOsYzs6vCtHydoKJGJU+A=",
+  "Hash": "BPyjnZ6WeF92lUlcJZk7htwqHwFBPcBki9ygBEDPb7I=",
   "Source": "Sellura.Server",
   "BasePath": "_content/Sellura.Server",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [
-    {
-      "Identity": "P:\\Sellura\\sellura.client\\sellura.client.esproj",
-      "Version": 2,
-      "Source": "sellura.client",
-      "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "",
-      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
-      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "",
-      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
-    }
-  ],
+  "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "Assets": []
 }

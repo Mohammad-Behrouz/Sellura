@@ -26,6 +26,19 @@ public class Warehouse
     [Range(1, int.MaxValue, ErrorMessage = " {0} باید عددی بزرگ‌تر از صفر باشد")]
     public int Capacity { get; set; }
 
+    [Display(Name = "مدیر انبار")]
+    [Range(1, int.MaxValue, ErrorMessage = " {0} باید عددی بزرگ‌تر از صفر باشد")]
+    public string? Manager { get; set; } = "";
+
+    [Display(Name = "شماره تلفن")]
+    public string Phone { get; set; }
+
+    [Display(Name = "وضعیت ")]
+    public required string Situation { get; set; } = "فعال";
+
+    [Display(Name = "شهر ")]
+    public required string City { get; set; }
+
     [Display(Name = "تاریخ ثبت انبار")]
     public DateTime CreatedDate { get; set; }
 }

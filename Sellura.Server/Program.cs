@@ -1,7 +1,19 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Sellura.Datalayer.Context;
 
 var builder = WebApplication.CreateBuilder(args);
+
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+        policy =>
+        {
+            policy.AllowAnyOrigin()    // اجازه به همه‌ی دامین‌ها
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+});
 
 // Add services to the container.
 
@@ -21,16 +33,9 @@ builder.Services.AddControllersWithViews();
 
 // Get current environment
 var environment = builder.Environment;
-
-string connectionString = environment.IsDevelopment()
-    ? builder.Configuration.GetConnectionString("MyEShopConnection_Development")
-    : builder.Configuration.GetConnectionString("MyEShopConnection_Production");
-
-// Set DbContext
 builder.Services.AddDbContext<SelluraContext>(options =>
-{
-    options.UseSqlServer(connectionString);
-});
+    options.UseSqlServer(builder.Configuration.GetConnectionString("connection")));
+
 
 #endregion
 
@@ -49,10 +54,16 @@ else
 }
 
 app.UseHttpsRedirection();
-app.UseAuthentication();
-app.UseRouting();
-app.UseAuthorization();
 
+app.UseSwagger();
+app.UseSwaggerUI();
+
+app.UseRouting();
+
+app.UseCors("AllowAll");  // اینجا مهمه
+
+app.UseAuthentication();
+app.UseAuthorization();
 #endregion
 
 #region Map Endpoints

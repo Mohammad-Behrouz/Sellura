@@ -31,6 +31,7 @@
 .redbtn:hover{
   background-color:#D76C82 !important;
   color: white !important;
+  border: none !important;
 }
 .greenbtn{
   background-color:#1F7D53 ;
@@ -38,6 +39,7 @@
 .greenbtn:hover{
   color: white !important;
   background-color:#1F7D53 !important;
+  border: none !;
 }
 .dropbtn:hover{
   background-color: #fff;
@@ -173,6 +175,8 @@
 #nav-list a {
   display: flex;
   gap: 20px;
+  color: white;
+  text-decoration: none;
 }
 .header-of-dash{
   color: #5A1899;
@@ -184,7 +188,7 @@
   border:1px solid #5A1899;
   color: #5A1899;
   border-radius: 10px;
-  margin: 2px;
+  margin: 5px;
   padding: 7px 8px;
   cursor: pointer;
   outline: none;
@@ -223,4 +227,54 @@
 .ReactModal__Content--before-close {
   transform: translateY(50px);
   opacity: 0;
+}
+.dropdown {
+  width: 65%;
+  direction: rtl;
+
+  padding: 8px 12px;
+  border-radius: 8px;
+  /* border: 1.5px solid #7a4de8; */
+  border: none;
+  background-color: #D9C7F2;
+  color: #5A189A;
+  font-size: 16px;
+  font-weight: 600;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%234a2db0' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px 16px;
+  padding-right: 36px; /* فضای لازم برای آیکون */
+}
+
+.dropdown:hover {
+  border-color: #5a28b0;
+  background-color: #e6e0ff;
+}
+
+.dropdown:focus {
+  border-color: #3a1f8a;
+  box-shadow: 0 0 6px 2px rgba(90, 40, 176, 0.4);
+  background-color: #ede9ff;
+}
+
+.dropdown option {
+
+  padding: 10px;
+  background-color: white;
+  color: black;
+  transition: all 0.3s linear;
+}
+
+.dropdown:disabled {
+  background-color: #d3d1d9;
+  color: #888;
+  cursor: not-allowed;
+  border-color: #aaa;
 }
